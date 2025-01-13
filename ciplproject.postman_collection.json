@@ -1,0 +1,536 @@
+{
+	"info": {
+		"_postman_id": "565c0239-609b-48ab-a396-75065643d74d",
+		"name": "ciplproject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40948011"
+	},
+	"item": [
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "User Registration",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"Boni@example.com\",\r\n    \"name\":\"Boni\",\r\n    \"password\":\"12345\",\r\n    \"password2\":\"12345\",\r\n    \"role\":\"user\",\r\n    \"tc\":\"True\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@example.com\",\r\n    \"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2Njc2MTc0LCJpYXQiOjE3MzY2NzUyNzQsImp0aSI6Ijk4M2NlOTZlYjYyNTRlMTE4Y2JiNzRiY2JiYmZkZjIyIiwidXNlcl9pZCI6OH0.PSv39u54uHNY_P4OB5PK16wme5PcM0I3ntfzfVt5GrM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/profile/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2NjY5Mjk2LCJpYXQiOjE3MzY2NjgzOTYsImp0aSI6ImM4NDRhNWUyYTc3ZDRjZGI5NDU4MDQ0MjA4YTM4YjE3IiwidXNlcl9pZCI6Nn0.WC2RUt-vNRkN_5d_FqPF1Guxtr8VDgPqu0-QS864ITo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/logout/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token Refresh",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczNjc1ODIzMCwiaWF0IjoxNzM2NjcxODMwLCJqdGkiOiI4ODIzMzVlNjk4MzY0NjkwODMyOWRmZWUwNDQ3OWUyZiIsInVzZXJfaWQiOjZ9.FbeydOV3CvwySAGFcMRSJBoDtjlKHzH8-yz6yEqR3Cg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/token/refresh/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "Product Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2Njc2Mjc5LCJpYXQiOjE3MzY2NzUzNzksImp0aSI6IjI3ZDMxOTFiOTJlODRhZjZhMWIyMDlkOTRmMTY3NzIyIiwidXNlcl9pZCI6MX0.iIVHtNpo-1mBdp9IDtiVtjujPAlrSZoq45gVwyWG33Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "\"Sample Product3\"",
+									"type": "text"
+								},
+								{
+									"key": "description ",
+									"value": "\"This is a sample product3.\"",
+									"type": "text"
+								},
+								{
+									"key": "price ",
+									"value": "59.99",
+									"type": "text"
+								},
+								{
+									"key": "discount ",
+									"value": "5.00",
+									"type": "text"
+								},
+								{
+									"key": "ssn ",
+									"value": "123-45-6788",
+									"type": "text"
+								},
+								{
+									"key": "image ",
+									"type": "file",
+									"src": "/C:/Users/patha/Downloads/test.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/product/create/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2NjU4NTc3LCJpYXQiOjE3MzY2NTc2NzcsImp0aSI6ImE2MmUxNjJkMzFiYTQzMmViZjMyMjUxNjZhNWZlMDVlIiwidXNlcl9pZCI6MX0.gO2VNqdMjcrByGKQnXVqY47A3LWkXPy87_2JGyoPhJ0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "\"Sample Product\"",
+									"type": "text"
+								},
+								{
+									"key": "description ",
+									"value": "\"This is a sample product.\"",
+									"type": "text"
+								},
+								{
+									"key": "price ",
+									"value": "25.00",
+									"type": "text"
+								},
+								{
+									"key": "discount ",
+									"value": "5.00",
+									"type": "text"
+								},
+								{
+									"key": "ssn ",
+									"value": "123-45-6789",
+									"type": "text"
+								},
+								{
+									"key": "image ",
+									"type": "file",
+									"src": "/C:/Users/patha/Downloads/test.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/product/update/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"update",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Partial Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2Njc2Mjc5LCJpYXQiOjE3MzY2NzUzNzksImp0aSI6IjI3ZDMxOTFiOTJlODRhZjZhMWIyMDlkOTRmMTY3NzIyIiwidXNlcl9pZCI6MX0.iIVHtNpo-1mBdp9IDtiVtjujPAlrSZoq45gVwyWG33Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "price",
+									"value": "30.50",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/product/update/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"update",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2Njc2Mjc5LCJpYXQiOjE3MzY2NzUzNzksImp0aSI6IjI3ZDMxOTFiOTJlODRhZjZhMWIyMDlkOTRmMTY3NzIyIiwidXNlcl9pZCI6MX0.iIVHtNpo-1mBdp9IDtiVtjujPAlrSZoq45gVwyWG33Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/product/delete/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"delete",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2Njc2Mjc5LCJpYXQiOjE3MzY2NzUzNzksImp0aSI6IjI3ZDMxOTFiOTJlODRhZjZhMWIyMDlkOTRmMTY3NzIyIiwidXNlcl9pZCI6MX0.iIVHtNpo-1mBdp9IDtiVtjujPAlrSZoq45gVwyWG33Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/product/list/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Disable",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2Njc2Mjc5LCJpYXQiOjE3MzY2NzUzNzksImp0aSI6IjI3ZDMxOTFiOTJlODRhZjZhMWIyMDlkOTRmMTY3NzIyIiwidXNlcl9pZCI6MX0.iIVHtNpo-1mBdp9IDtiVtjujPAlrSZoq45gVwyWG33Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/product/disable/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"disable",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Export Products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2NjgzNzE4LCJpYXQiOjE3MzY2ODI4MTgsImp0aSI6IjdhMGI3MTAxZGQ3YTQ3M2U5M2ExNTcwODVjN2NiYmVmIiwidXNlcl9pZCI6MX0.Fn9hPEb2phnzsqHCj43Gz9nmcz2boHD9naA-wH69s0Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/product/export/products/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"export",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
